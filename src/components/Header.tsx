@@ -1,4 +1,4 @@
-import useScrollFadeIn from '@/hooks/useScrollFadeIn';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -7,53 +7,64 @@ function Header() {
 
   const handleScroll = useCallback(() => {
     if (window.scrollY === 0) {
+      console.log(window.scrollY);
       setIsScroll(false);
     } else {
+      console.log(window.scrollY);
       setIsScroll(true);
     }
   }, []);
 
   useEffect(() => {
-    window.addEventListener('mousewheel', handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('mousewheel', handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [handleScroll]);
   return (
-    <div>
-      <S.Header isScroll={isScroll} />
-      <S.Test {...useScrollFadeIn('up')} />
-      <S.Test {...useScrollFadeIn('down')} />
-      <S.Test {...useScrollFadeIn('left')} />
-      <S.Test {...useScrollFadeIn('right')} />
-      <S.Test {...useScrollFadeIn('up')} />
-      <S.Test {...useScrollFadeIn('down')} />
-      <S.Test {...useScrollFadeIn('left')} />
-      <S.Test {...useScrollFadeIn('right')} />
-    </div>
+    <S.Wrapper isScroll={isScroll}>
+      <S.Header isScroll={isScroll}>
+        WEB NAME
+        <div className="links">
+          <a>SOMETHING 1</a>
+          <a>SOMETHING 2</a>
+          <a>SOMETHING 3</a>
+        </div>
+      </S.Header>
+    </S.Wrapper>
   );
 }
 
-interface HeaderProps {
-  readonly isScroll: boolean;
-}
-
 const S = {
-  Header: styled('div')<HeaderProps>`
-    position: sticky;
+  Wrapper: styled('div')<{ isScroll: boolean }>`
+    width: 100%;
+    position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
-    height: 136px;
     z-index: 1000;
-    background-color: ${(props) => (props.isScroll ? 'black' : 'none')};
     transition: all 0.2s ease-in-out;
+    color: white;
+    background-color: none;
+    box-shadow: none;
+    ${({ isScroll }) =>
+      isScroll &&
+      css`
+        color: black;
+        background-color: white;
+        box-shadow: 0 0 16px 8px rgba(221, 165, 43, 0.5);
+      `};
   `,
-  Test: styled('div')`
-    height: 200px;
-    width: 200px;
-    margin: 100px;
-    background-color: yellow;
+  Header: styled('header')<{ isScroll: boolean }>`
+    max-width: 800px;
+    height: 70px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    .links {
+      margin-left: auto;
+      a + a {
+        margin-left: 20px;
+      }
+    }
   `,
 };
 

@@ -1,10 +1,12 @@
-import { Header } from '@/components';
+import { Header, Hero, Test } from '@/components';
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Header />
-    </div>
+      <Hero />
+      <Test />
+    </>
   );
 };
 

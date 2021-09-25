@@ -8,7 +8,6 @@ function GlobalStyle() {
         ${emotionReset}
         *, *::before, *::after {
           box-sizing: border-box;
-          font-family: 'Lato', sans-serif;
         }
       `}
     />

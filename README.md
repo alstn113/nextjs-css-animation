@@ -19,5 +19,4 @@ emotion 설정
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 nextjs에서 window나 document를 사용할려면 componentDidMound(useEffect)안에서 사용해야함
-
-framer motion으로 바꾸기
+hero image는 특대 사이즈 배너 이미지 hero header라고 하기도 함.
