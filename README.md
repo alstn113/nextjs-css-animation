@@ -19,3 +19,5 @@ emotion 설정
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 nextjs에서 window나 document를 사용할려면 componentDidMound(useEffect)안에서 사용해야함
+
+framer motion으로 바꾸기
