@@ -36,7 +36,7 @@ function Header() {
 }
 
 const S = {
-  Wrapper: styled('div')<{ isScroll: boolean }>`
+  Wrapper: styled('section')<{ isScroll: boolean }>`
     width: 100%;
     position: fixed;
     top: 0;

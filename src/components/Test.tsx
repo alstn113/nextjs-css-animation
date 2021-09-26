@@ -19,7 +19,7 @@ function Test() {
 export default Test;
 
 const S = {
-  Wrapper: styled('div')`
+  Wrapper: styled('section')`
     margin: 0 auto;
   `,
   Test: styled('div')`

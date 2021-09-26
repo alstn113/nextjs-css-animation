@@ -20,3 +20,6 @@ emotion 설정
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 nextjs에서 window나 document를 사용할려면 componentDidMound(useEffect)안에서 사용해야함
 hero image는 특대 사이즈 배너 이미지 hero header라고 하기도 함.
+
+vw와 vh는 스크롤포함 값 %는 스크롤 제외
+height: 100%할 때 기준값 없으면 적용 안 됨
