@@ -1,3 +1,9 @@
 export { default as Header } from '@/components/Header';
 export { default as Hero } from '@/components/Hero';
-export { default as Test } from '@/components/Test';
+export { default as Services } from '@/components/Services';
+export { default as Feature } from '@/components/Feature';
+export { default as Figure } from '@/components/Figure';
+export { default as Works } from '@/components/Works';
+export { default as Contact } from '@/components/Contact';
+export { default as Banner } from '@/components/Banner';
+export { default as Footer } from '@/components/Footer';

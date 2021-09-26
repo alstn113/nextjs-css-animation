@@ -1,11 +1,27 @@
-import { Header, Hero, Test } from '@/components';
+import {
+  Header,
+  Hero,
+  Services,
+  Feature,
+  Figure,
+  Works,
+  Contact,
+  Banner,
+  Footer,
+} from '@/components';
 
 const Home = () => {
   return (
     <>
       <Header />
       <Hero />
-      <Test />
+      <Services />
+      <Feature />
+      <Figure />
+      <Works />
+      <Contact />
+      <Banner />
+      <Footer />
     </>
   );
 };

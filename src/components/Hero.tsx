@@ -2,20 +2,6 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 import background from '../../public/background.jpg';
 
-function Hero() {
-  return (
-    <S.Wrapper>
-      <S.Background src={background} layout="fill" />
-      <S.TextWrapper>
-        <S.Title>TITLE</S.Title>
-        <S.Description>DESCRIPTION</S.Description>
-      </S.TextWrapper>
-    </S.Wrapper>
-  );
-}
-
-export default Hero;
-
 export const S = {
   Wrapper: styled('section')`
     width: 100%;
@@ -30,8 +16,8 @@ export const S = {
   TextWrapper: styled('div')`
     width: 100%;
     height: 100%;
-    max-width: 1180px;
-    margin: auto;
+    max-width: 1024px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,3 +34,17 @@ export const S = {
     color: white;
   `,
 };
+
+function Hero() {
+  return (
+    <S.Wrapper>
+      <S.Background src={background} layout="fill" />
+      <S.TextWrapper>
+        <S.Title>TITLE</S.Title>
+        <S.Description>DESCRIPTION</S.Description>
+      </S.TextWrapper>
+    </S.Wrapper>
+  );
+}
+
+export default Hero;

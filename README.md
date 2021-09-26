@@ -1,3 +1,6 @@
+https://github.com/jus0k/scroll-hooks
+이분 걸 참고하면서 만들었음
+
 npx create-next-app 이름 --ts
 
       npm i -D @types/node @types/react-dom ts-node
