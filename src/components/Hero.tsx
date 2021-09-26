@@ -4,26 +4,30 @@ import background from '../../public/background.jpg';
 
 function Hero() {
   return (
-    <S.Background>
-      <Image src={background} layout="fill" />
-      <S.Wrapper>
+    <S.Wrapper>
+      <S.Background src={background} layout="fill" />
+      <S.TextWrapper>
         <S.Title>TITLE</S.Title>
         <S.Description>DESCRIPTION</S.Description>
-      </S.Wrapper>
-    </S.Background>
+      </S.TextWrapper>
+    </S.Wrapper>
   );
 }
 
 export default Hero;
 
 export const S = {
-  Background: styled('section')`
+  Wrapper: styled('section')`
     width: 100%;
     height: 780px;
     position: relative;
     top: 0;
   `,
-  Wrapper: styled('div')`
+  Background: styled(Image)`
+    z-index: -1;
+  `,
+
+  TextWrapper: styled('div')`
     width: 100%;
     height: 100%;
     max-width: 1180px;
@@ -31,13 +35,16 @@ export const S = {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    z-index: 1;
   `,
-
   Title: styled('h1')`
+    font-size: 10rem;
+    text-shadow: 6px 2px 2px gray;
     color: white;
+    margin-bottom: 2rem;
   `,
   Description: styled('p')`
+    font-size: 5rem;
+    text-shadow: 6px 2px 2px gray;
     color: white;
   `,
 };

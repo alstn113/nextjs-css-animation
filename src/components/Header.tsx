@@ -50,7 +50,7 @@ const S = {
       css`
         color: black;
         background-color: white;
-        box-shadow: 0 0 16px 8px rgba(221, 165, 43, 0.5);
+        box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.5);
       `};
   `,
   Header: styled('header')<{ isScroll: boolean }>`
