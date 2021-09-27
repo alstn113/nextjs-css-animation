@@ -1,10 +1,7 @@
 import styled from '@emotion/styled';
-
-function Works() {
-  return <S.Wrapper>Works</S.Wrapper>;
-}
-
-export default Works;
+import { cat1, cat2, cat3 } from '../../public/cat';
+import Image from 'next/image';
+import useScrollFadeIn from '@/hooks/useScrollFadeIn';
 
 const S = {
   Wrapper: styled('section')`
@@ -13,8 +10,90 @@ const S = {
     padding: 100px 0px;
     max-width: 1024px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background-color: yellow;
+  `,
+  Label: styled('p')`
+    margin-bottom: 1rem;
+    color: red;
+  `,
+  Title: styled('h2')`
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  `,
+  Description: styled('p')`
+    margin-bottom: 2rem;
+  `,
+  CardWrapper: styled('ul')`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2rem;
+  `,
+  Card: styled('li')`
+    width: 300px;
+    box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+  `,
+  Image: styled(Image)`
+    border-radius: 1rem 1rem 0 0;
+  `,
+  TextWrapper: styled('div')`
+    padding: 2rem;
+  `,
+  CardTitle: styled('h3')`
+    margin-bottom: 1rem;
+  `,
+  CardLabel: styled('p')`
+    margin-bottom: 1rem;
+  `,
+  CardDesciption: styled('p')`
+    margin-bottom: 1rem;
   `,
 };
+
+function Works() {
+  const WORKS_ITEMS = [
+    {
+      image: cat1,
+      title: 'Title-1',
+      label: 'Date-1',
+      description: 'Description-1',
+    },
+    {
+      image: cat2,
+      title: 'Title-2',
+      label: 'Date-2',
+      description: 'Description-2',
+    },
+    {
+      image: cat3,
+      title: 'Title-3',
+      label: 'Date-3',
+      description: 'Description-3',
+    },
+  ];
+
+  return (
+    <S.Wrapper>
+      <S.Label>Our Recent Works</S.Label>
+      <S.Title>Title</S.Title>
+      <S.Description>Description</S.Description>
+      <S.CardWrapper>
+        {WORKS_ITEMS.map((item, index) => (
+          <S.Card key={index} {...useScrollFadeIn('up', 1, index * 0.1)}>
+            <S.Image src={item.image} width={300} height={300} />
+            <S.TextWrapper>
+              <S.CardTitle>{item.title}</S.CardTitle>
+              <S.CardLabel>{item.label}</S.CardLabel>
+              <S.CardDesciption>{item.description}</S.CardDesciption>
+            </S.TextWrapper>
+          </S.Card>
+        ))}
+      </S.CardWrapper>
+    </S.Wrapper>
+  );
+}
+
+export default Works;
