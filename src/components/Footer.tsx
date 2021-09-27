@@ -43,7 +43,7 @@ const S = {
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 100px 0 50px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

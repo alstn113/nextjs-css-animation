@@ -22,10 +22,7 @@ const useScrollFadeIn = (direction = 'up', duration = 1, delay = 0) => {
     ([entry]) => {
       const { current } = element;
       if (entry.isIntersecting && current !== null) {
-        current.style.transitionProperty = 'all';
-        current.style.transitionDuration = `${duration}s`;
-        current.style.transitionTimingFunction = 'cubic-bezier(0, 0, 0.2, 1)';
-        current.style.transitionDelay = `${delay}s`;
+        current.style.transition = `${duration}s all ease-in-out ${delay}s`;
         current.style.opacity = '1';
         current.style.transform = 'translate3d(0, 0, 0)';
       }
@@ -37,11 +34,13 @@ const useScrollFadeIn = (direction = 'up', duration = 1, delay = 0) => {
     let observer: IntersectionObserver;
 
     if (element.current) {
-      observer = new IntersectionObserver(onScroll, { threshold: 0.7 });
+      observer = new IntersectionObserver(onScroll, { threshold: 0.5 });
       observer.observe(element.current);
     }
 
-    return () => observer && observer.disconnect();
+    return () => {
+      observer && observer.disconnect();
+    };
   }, [onScroll]);
 
   return {

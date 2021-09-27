@@ -1,3 +1,5 @@
+추가적으로 해볼 것들 : 쇼핑몰같은 상단 메뉴바, 미디어쿼리
+
 https://github.com/jus0k/scroll-hooks
 이분 걸 참고하면서 만들었음
 
@@ -28,3 +30,6 @@ vw와 vh는 스크롤포함 값 %는 스크롤 제외
 height: 100%할 때 기준값 없으면 적용 안 됨
 
 width: fit-content로 ul사이즈 맞추기
+
+일단 ex) Header: styled(motion.div) 이런 식으로 하고
+useHook에서 ref랑 variant 적용해서 return 하면 될지도?...
