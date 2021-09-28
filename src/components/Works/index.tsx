@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
-import { cat1, cat2, cat3 } from '../../public/cat';
+import { cat1, cat2, cat3 } from '../../../public/cat';
 import Image from 'next/image';
 import useScrollFadeIn from '@/hooks/useScrollFadeIn';
+import { Button } from '@/components/Common';
 
 const S = {
   Wrapper: styled('section')`
@@ -15,10 +16,10 @@ const S = {
   `,
   Label: styled('p')`
     margin-bottom: 1rem;
-    color: red;
+    ${({ theme }) => theme.typography.label}
   `,
   Title: styled('h2')`
-    font-size: 3rem;
+    ${({ theme }) => theme.typography.title};
     margin-bottom: 1rem;
   `,
   Description: styled('p')`
@@ -92,6 +93,7 @@ function Works() {
           </S.Card>
         ))}
       </S.CardWrapper>
+      <Button outline>MORE WORKS</Button>
     </S.Wrapper>
   );
 }

@@ -3,24 +3,20 @@ import '@emotion/react';
 declare module '@emotion/react' {
   export interface Theme {
     color: {
-      background: string;
       white: string;
-      light_grey1: string;
-      light_grey2: string;
-      light_violet0: string;
-      light_violet1: string;
-      light_violet2: string;
-      dark_violet0: string;
-      dark_violet1: string;
-      dark_violet2: string;
+      black: string;
+      gray0: string;
+      gray1: string;
+      gray2: string;
+      orange0: string;
+      orange1: string;
+      orange2: string;
     };
-    font: {
-      small: css;
-      medium: css;
-      large: css;
-      xlarge: css;
+    typography: {
+      title: css;
+      subtitle: css;
+      label: css;
+      description: css;
     };
-    flexCenter: css;
-    shadow: css;
   }
 }

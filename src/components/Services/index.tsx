@@ -13,12 +13,11 @@ const S = {
   `,
   Label: styled('p')`
     margin-bottom: 2rem;
-    color: red;
-    font-size: 1rem;
+    ${({ theme }) => theme.typography.label}
   `,
   Title: styled('h2')`
     margin-bottom: 2rem;
-    font-size: 3rem;
+    ${({ theme }) => theme.typography.title};
   `,
   CardWrapper: styled('ul')`
     width: 100%;

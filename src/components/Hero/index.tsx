@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import background from '../../public/background.jpg';
-
+import background from '../../../public/background.jpg';
+import { Button } from '@/components/Common';
 export const S = {
   Wrapper: styled('section')`
     width: 100%;
@@ -23,14 +23,15 @@ export const S = {
     justify-content: center;
   `,
   Title: styled('h1')`
-    font-size: 10rem;
+    font-size: 5rem;
     text-shadow: 6px 2px 2px gray;
     color: white;
     margin-bottom: 2rem;
   `,
   Description: styled('p')`
-    font-size: 5rem;
+    font-size: 3rem;
     text-shadow: 6px 2px 2px gray;
+    margin-bottom: 2rem;
     color: white;
   `,
 };
@@ -42,6 +43,7 @@ function Hero() {
       <S.TextWrapper>
         <S.Title>TITLE</S.Title>
         <S.Description>DESCRIPTION</S.Description>
+        <Button>GET QUOTE</Button>
       </S.TextWrapper>
     </S.Wrapper>
   );

@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
+import { Button } from '@/components/Common';
 
 function Banner() {
   return (
     <S.Wrapper>
       <S.Label>Get Started</S.Label>
       <S.Title>Title</S.Title>
+      <Button>GET QUOTE</Button>
     </S.Wrapper>
   );
 }
@@ -23,11 +25,11 @@ const S = {
     background-color: rgb(248, 245, 242);
   `,
   Label: styled('p')`
-    font-size: 1rem;
-    color: red;
+    ${({ theme }) => theme.typography.label};
     margin-bottom: 1rem;
   `,
   Title: styled('h2')`
-    font-size: 3rem;
+    ${({ theme }) => theme.typography.title};
+    margin-bottom: 2rem;
   `,
 };

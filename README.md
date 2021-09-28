@@ -31,5 +31,23 @@ height: 100%할 때 기준값 없으면 적용 안 됨
 
 width: fit-content로 ul사이즈 맞추기
 
-일단 ex) Header: styled(motion.div) 이런 식으로 하고
-useHook에서 ref랑 variant 적용해서 return 하면 될지도?...
+이런 식으로 하면 스크롤 위로 갈 때만 보이게 가능함
+
+            function Header() {
+              const [isScroll, setIsScroll] = useState(false);
+              const [lastYPos, setLastYPos] = useState(0);
+
+              const handleScroll = useCallback(() => {
+                const yPos = window.scrollY;
+                const isScrollingUp = yPos > lastYPos;
+
+                setIsScroll(isScrollingUp);
+                setLastYPos(yPos);
+              }, [lastYPos]);
+
+              useEffect(() => {
+                window.addEventListener('scroll', handleScroll);
+                return () => {
+                  window.removeEventListener('scroll', handleScroll);
+                };
+              }, [handleScroll]);

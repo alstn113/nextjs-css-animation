@@ -1,26 +1,7 @@
 import styled from '@emotion/styled';
-import { cat2 } from '../../public/cat';
+import { cat2 } from '../../../public/cat';
 import Image from 'next/image';
-
-function Contact() {
-  return (
-    <S.Wrapper>
-      <Image src={cat2} width={512} height={512} />
-      <S.TextWrapper>
-        <S.Label>Our Features</S.Label>
-        <S.Title>Title</S.Title>
-        <S.Description>Description</S.Description>
-        <S.Form>
-          <S.TextField type="text" placeholder="Name" />
-          <S.TextField type="text" placeholder="Work Email" />
-          <S.TextField type="text" placeholder="Company Name" />
-        </S.Form>
-      </S.TextWrapper>
-    </S.Wrapper>
-  );
-}
-
-export default Contact;
+import { Button } from '@/components/Common';
 
 const S = {
   Wrapper: styled('section')`
@@ -40,11 +21,11 @@ const S = {
     justify-content: center;
   `,
   Label: styled('p')`
-    color: red;
+    ${({ theme }) => theme.typography.label};
     margin-bottom: 1rem;
   `,
   Title: styled('h2')`
-    font-size: 3rem;
+    ${({ theme }) => theme.typography.title};
     margin-bottom: 1rem;
   `,
   Description: styled('p')`
@@ -55,6 +36,9 @@ const S = {
     flex-direction: column;
     input {
       margin-bottom: 1rem;
+      width: 70%;
+    }
+    button {
       width: 70%;
     }
   `,
@@ -69,3 +53,24 @@ const S = {
     }
   `,
 };
+
+function Contact() {
+  return (
+    <S.Wrapper>
+      <Image src={cat2} width={512} height={512} />
+      <S.TextWrapper>
+        <S.Label>Our Features</S.Label>
+        <S.Title>Title</S.Title>
+        <S.Description>Description</S.Description>
+        <S.Form>
+          <S.TextField type="text" placeholder="Name" />
+          <S.TextField type="text" placeholder="Work Email" />
+          <S.TextField type="text" placeholder="Company Name" />
+          <Button type="submit">BECOME A PARTNER</Button>
+        </S.Form>
+      </S.TextWrapper>
+    </S.Wrapper>
+  );
+}
+
+export default Contact;
