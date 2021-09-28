@@ -29,8 +29,8 @@ const S = {
   `,
 };
 
-function Button(props: Props) {
-  return <S.Button {...props}></S.Button>;
+function Button({ children, outline, type }: Props) {
+  return <S.Button {...{ children, outline, type }} />;
 }
 
 export default Button;

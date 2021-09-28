@@ -18,5 +18,12 @@ declare module '@emotion/react' {
       label: css;
       description: css;
     };
+    media: {
+      custom: (maxWidth: number) => string;
+      labtop_L: string;
+      labtop_S: string;
+      tablet: string;
+      mobile: string;
+    };
   }
 }

@@ -31,9 +31,20 @@ const typography = {
   `,
 };
 
+const media = {
+  custom: (maxWidth: number): string => {
+    return `screen and (max-width: ${maxWidth}px)`;
+  },
+  labtop_L: 'screen and (max-width: 1440px)',
+  labtop_S: 'screen and (max-width: 768px)',
+  tablet: 'screen and (max-width: 1100px)',
+  mobile: 'screen and (max-width: 500px)',
+};
+
 const theme = {
   color,
   typography,
+  media,
 };
 
 export default theme;

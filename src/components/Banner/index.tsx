@@ -1,18 +1,6 @@
 import styled from '@emotion/styled';
 import { Button } from '@/components/Common';
 
-function Banner() {
-  return (
-    <S.Wrapper>
-      <S.Label>Get Started</S.Label>
-      <S.Title>Title</S.Title>
-      <Button>GET QUOTE</Button>
-    </S.Wrapper>
-  );
-}
-
-export default Banner;
-
 const S = {
   Wrapper: styled('section')`
     width: 100%;
@@ -33,3 +21,15 @@ const S = {
     margin-bottom: 2rem;
   `,
 };
+
+function Banner() {
+  return (
+    <S.Wrapper>
+      <S.Label>Get Started</S.Label>
+      <S.Title>Title</S.Title>
+      <Button>GET QUOTE</Button>
+    </S.Wrapper>
+  );
+}
+
+export default Banner;

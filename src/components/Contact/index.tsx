@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { cat2 } from '../../../public/cat';
 import Image from 'next/image';
-import { Button } from '@/components/Common';
+import { Button, TextField } from '@/components/Common';
 
 const S = {
   Wrapper: styled('section')`
@@ -42,16 +42,6 @@ const S = {
       width: 70%;
     }
   `,
-  TextField: styled('input')`
-    border-radius: 0.5rem;
-    padding: 1rem;
-    border: 2px solid gray;
-
-    :focus {
-      outline: none;
-      border-color: #1c19bb;
-    }
-  `,
 };
 
 function Contact() {
@@ -63,9 +53,9 @@ function Contact() {
         <S.Title>Title</S.Title>
         <S.Description>Description</S.Description>
         <S.Form>
-          <S.TextField type="text" placeholder="Name" />
-          <S.TextField type="text" placeholder="Work Email" />
-          <S.TextField type="text" placeholder="Company Name" />
+          <TextField type="text" placeholder="Name" />
+          <TextField type="text" placeholder="Work Email" />
+          <TextField type="text" placeholder="Company Name" />
           <Button type="submit">BECOME A PARTNER</Button>
         </S.Form>
       </S.TextWrapper>
