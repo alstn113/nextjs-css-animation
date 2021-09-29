@@ -7,18 +7,24 @@ const S = {
   Wrapper: styled('section')`
     width: 100%;
     margin: 0 auto;
-    padding: 100px 0px;
+    padding: 2rem;
     max-width: 1024px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    @media ${({ theme }) => theme.media.mobile} {
+      flex-flow: column-reverse;
+    }
   `,
   TextWrapper: styled('div')`
-    width: 512px;
-    padding-left: 50px;
+    width: 50vw;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media ${({ theme }) => theme.media.mobile} {
+      width: 90vw;
+    }
   `,
   Label: styled('p')`
     ${({ theme }) => theme.typography.label};
@@ -49,7 +55,7 @@ function Contact() {
     <S.Wrapper>
       <Image src={cat2} width={512} height={512} />
       <S.TextWrapper>
-        <S.Label>Our Features</S.Label>
+        <S.Label>Contact Us</S.Label>
         <S.Title>Title</S.Title>
         <S.Description>Description</S.Description>
         <S.Form>

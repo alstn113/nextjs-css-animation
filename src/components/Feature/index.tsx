@@ -6,17 +6,23 @@ const S = {
   Wrapper: styled('section')`
     width: 100%;
     margin: 0 auto;
-    padding: 100px 0px;
+    padding: 2rem;
     max-width: 1024px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    @media ${({ theme }) => theme.media.mobile} {
+      flex-direction: column;
+    }
   `,
   TextWrapper: styled('div')`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 512px;
+    width: 30vw;
+    @media ${({ theme }) => theme.media.mobile} {
+      width: 90vw;
+    }
   `,
   Label: styled('p')`
     margin-bottom: 1rem;
@@ -36,6 +42,9 @@ const S = {
   ListItem: styled('p')`
     padding: 1rem 1rem 1rem 0;
     border-bottom: 1px solid black;
+  `,
+  ImageWrapper: styled(Image)`
+    width: 30vw;
   `,
 };
 

@@ -13,7 +13,7 @@ const S = {
   `,
   List: styled('ul')`
     display: flex;
-    @media ${({ theme }) => theme.media.tablet} {
+    @media ${({ theme }) => theme.media.mobile} {
       flex-direction: column;
     }
   `,
@@ -21,7 +21,7 @@ const S = {
     width: 100%;
     text-align: center;
     padding: 0 2rem;
-    @media ${({ theme }) => theme.media.tablet} {
+    @media ${({ theme }) => theme.media.mobile} {
       padding: 1rem;
     }
   `,
