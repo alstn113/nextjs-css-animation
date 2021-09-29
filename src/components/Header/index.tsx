@@ -114,7 +114,6 @@ function Header() {
             </S.NavigationItem>
           ))}
         </S.Navigation>
-
         <S.HamburgerMenu isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
           TAP
         </S.HamburgerMenu>

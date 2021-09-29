@@ -24,6 +24,10 @@ const S = {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    @media ${({ theme }) => theme.media.tablet} {
+      flex-direction: column;
+      align-items: center;
+    }
   `,
   Card: styled('li')`
     background-color: orange;
@@ -36,6 +40,10 @@ const S = {
     text-align: center;
     border-radius: 1rem;
     box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.03);
+    @media ${({ theme }) => theme.media.tablet} {
+      width: 70%;
+      margin: 1rem;
+    }
   `,
   CardTitle: styled('h3')`
     margin-bottom: 2rem;

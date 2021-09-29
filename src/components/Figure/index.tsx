@@ -9,21 +9,27 @@ const S = {
     width: 100%;
     margin: 0 auto;
     max-width: 1024px;
-    padding: 100px 0;
+    padding: 1rem 0;
   `,
   List: styled('ul')`
     display: flex;
+    @media ${({ theme }) => theme.media.tablet} {
+      flex-direction: column;
+    }
   `,
   ListItem: styled('li')`
     width: 100%;
     text-align: center;
     padding: 0 2rem;
+    @media ${({ theme }) => theme.media.tablet} {
+      padding: 1rem;
+    }
   `,
   Title: styled('h3')`
-    font-size: 2rem;
+    font-size: 1rem;
     color: #20c997;
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   `,
   Description: styled('p')``,
 };

@@ -31,11 +31,19 @@ const S = {
     justify-content: space-between;
     width: 100%;
     margin-bottom: 2rem;
+    @media ${({ theme }) => theme.media.tablet} {
+      flex-direction: column;
+      align-items: center;
+    }
   `,
   Card: styled('li')`
     width: 30%;
     box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
+    @media ${({ theme }) => theme.media.tablet} {
+      width: 70%;
+      margin: 1rem;
+    }
   `,
   Image: styled(Image)`
     border-radius: 1rem 1rem 0 0;
@@ -84,7 +92,7 @@ function Works() {
       <S.CardWrapper>
         {WORKS_ITEMS.map((item, index) => (
           <S.Card key={index} {...useScrollFadeIn('up', 1, index * 0.1)}>
-            <S.Image src={item.image} width={300} height={300} />
+            <S.Image src={item.image} width={300} height={300} layout="responsive" />
             <S.TextWrapper>
               <S.CardTitle>{item.title}</S.CardTitle>
               <S.CardLabel>{item.label}</S.CardLabel>

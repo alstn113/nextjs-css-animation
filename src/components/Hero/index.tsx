@@ -21,15 +21,18 @@ export const S = {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media ${({ theme }) => theme.media.tablet} {
+      align-items: center;
+    }
   `,
   Title: styled('h1')`
-    font-size: 5rem;
+    font-size: 4rem;
     text-shadow: 6px 2px 2px gray;
     color: white;
     margin-bottom: 2rem;
   `,
   Description: styled('p')`
-    font-size: 3rem;
+    font-size: 2rem;
     text-shadow: 6px 2px 2px gray;
     margin-bottom: 2rem;
     color: white;
