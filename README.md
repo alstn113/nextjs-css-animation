@@ -29,6 +29,8 @@ emotion 설정
           "@next/next/no-document-import-in-page": "off"
         }
 
+font 대부분 적용되는데 common 파일 꺼가 안되서 font-family : inherit 적용시킴
+
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 하면서 배운거
 
