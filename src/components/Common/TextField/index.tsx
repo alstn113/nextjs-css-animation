@@ -11,6 +11,7 @@ const S = {
     border-radius: 0.5rem;
     padding: 1rem;
     border: 1px solid gray;
+    font-family: inherit;
 
     :focus {
       outline: none;

@@ -9,6 +9,9 @@ function GlobalStyle() {
         *, *::before, *::after {
           box-sizing: border-box;
         }
+        html {
+          font-family: Gluten;
+        }
       `}
     />
   );

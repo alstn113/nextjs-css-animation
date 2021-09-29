@@ -22,7 +22,16 @@ emotion 설정
 \_app.tsx 설정
 .babelrc 설정
 
+\_document.tsx에 폰트 넣기
+참고로 오류가 발생해서 이거를 eslint.json에 넣어줌 // 11.1.3-canary.7에서는 된다는건지 정확히 모름.
+
+      "rules": {
+          "@next/next/no-document-import-in-page": "off"
+        }
+
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+하면서 배운거
+
 nextjs에서 window나 document를 사용할려면 componentDidMound(useEffect)안에서 사용해야함
 hero image는 특대 사이즈 배너 이미지 hero header라고 하기도 함.
 

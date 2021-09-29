@@ -42,7 +42,8 @@
     "react/jsx-filename-extension": "off", // <> </>쓰는 것 방지
     "spaced-comment": "off", // 주석 쓰는 것 방지
     "no-unused-variable": "off",
-    "@typescript-eslint/no-non-null-assertion": "off"
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@next/next/no-document-import-in-page": "off" // _document.tsx 오류 때문에 넣음
   },
   "settings": {
     "react": {

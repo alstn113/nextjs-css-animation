@@ -19,6 +19,7 @@ const S = {
     color: white;
     background-color: rgb(244, 93, 72);
     width: fit-content;
+    font-family: inherit;
     ${({ outline }) =>
       outline &&
       css`
