@@ -1,10 +1,13 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useCallback, useEffect, useState } from 'react';
-import { Button } from '@/components/Common';
 
 interface isScroll {
   isScroll: boolean;
+}
+
+interface isOpen {
+  isOpen: boolean;
 }
 
 const S = {
@@ -12,7 +15,7 @@ const S = {
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
     transition: all 0.2s ease-in-out;
     color: white;
     background-color: none;
@@ -31,31 +34,52 @@ const S = {
     margin: 0 auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   `,
   Logo: styled('span')<isScroll>`
     font-weight: 900;
     font-size: 1.5rem;
-    flex: 0 0 25%;
-    max-width: 25%;
+    margin: 0 1rem;
   `,
-  Navigation: styled('div')`
-    flex: 0 0 50%;
-    max-width: 50%;
+  Navigation: styled('ul')<isOpen>`
     display: flex;
-    justify-content: center;
+
+    @media ${({ theme }) => theme.media.tablet} {
+      background-color: #0d2538;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 300px;
+      padding-top: 5rem;
+      transition: all 0.3s ease-in-out;
+      transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(100%)')};
+
+      li {
+        color: #fff;
+        margin: 1.5rem;
+      }
+    } ;
   `,
-  NavigationItem: styled('a')<isScroll>`
+  NavigationItem: styled('li')<isScroll>`
     margin: 0 1rem;
     &:hover {
       opacity: 0.5;
       cursor: pointer;
     }
   `,
-  ButtonWrapper: styled('div')`
-    display: flex;
-    max-width: 25%;
-    flex: 0 0 25%;
-    justify-content: flex-end;
+
+  HamburgerMenu: styled('div')<isOpen>`
+    display: none;
+    z-index: 20;
+    font-weight: 900;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    @media ${({ theme }) => theme.media.tablet} {
+      color: ${({ isOpen }) => isOpen && 'white'};
+      display: flex;
+    } ;
   `,
 };
 
@@ -63,6 +87,7 @@ const NAVIGATION_ITEMS = ['Home', 'About', 'Services', 'Blog', 'Contact'];
 
 function Header() {
   const [isScroll, setIsScroll] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleScroll = useCallback(() => {
     if (window.scrollY === 0) {
@@ -82,16 +107,17 @@ function Header() {
     <S.Wrapper isScroll={isScroll}>
       <S.Header isScroll={isScroll}>
         <S.Logo isScroll={isScroll}>LOGO</S.Logo>
-        <S.Navigation>
+        <S.Navigation isOpen={isOpen}>
           {NAVIGATION_ITEMS.map((item, index) => (
             <S.NavigationItem key={index} isScroll={isScroll}>
               {item}
             </S.NavigationItem>
           ))}
         </S.Navigation>
-        <S.ButtonWrapper>
-          <Button>GET QUOTE</Button>
-        </S.ButtonWrapper>
+
+        <S.HamburgerMenu isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
+          TAP
+        </S.HamburgerMenu>
       </S.Header>
     </S.Wrapper>
   );

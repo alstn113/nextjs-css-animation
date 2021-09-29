@@ -33,7 +33,7 @@ const S = {
     margin-bottom: 2rem;
   `,
   Card: styled('li')`
-    width: 300px;
+    width: 30%;
     box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
   `,

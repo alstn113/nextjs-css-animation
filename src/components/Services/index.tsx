@@ -31,7 +31,7 @@ const S = {
     font-weight: 500;
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 30%;
     padding: 3rem 2rem;
     text-align: center;
     border-radius: 1rem;
