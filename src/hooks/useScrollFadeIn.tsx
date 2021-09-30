@@ -38,9 +38,7 @@ const useScrollFadeIn = (direction = 'up', duration = 1, delay = 0) => {
       observer.observe(element.current);
     }
 
-    return () => {
-      observer && observer.disconnect();
-    };
+    return () => observer && observer.disconnect();
   }, [onScroll]);
 
   return {

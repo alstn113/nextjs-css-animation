@@ -31,7 +31,11 @@ emotion 설정
 
 font 대부분 적용되는데 common 파일 꺼가 안되서 font-family : inherit 적용시킴
 
+font display=swap은 웹폰트가 로딩되기 전까지 fallback 폰트로 글자를 보여주는 것이다.
+화면전환이 크게 일어날 수 있으므로 fallback을 비슷한 걸로 해줘야 함
+
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
 하면서 배운거
 
 nextjs에서 window나 document를 사용할려면 componentDidMound(useEffect)안에서 사용해야함
